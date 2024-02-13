@@ -31,5 +31,15 @@ public class CourierController {
         return ResponseEntity.ok(activeQuests);
     }
 
-    // Implement other courier-facing endpoints similarly
+    @GetMapping("/history")
+    public ResponseEntity<List<QuestDetailsResponse>> getQuestHistory(@PathVariable String courierId) {
+        List<QuestDetailsResponse> questHistory = courierService.getQuestHistory(courierId);
+        return ResponseEntity.ok(questHistory);
+    }
+
+    @GetMapping("/ongoing")
+    public ResponseEntity<List<QuestDetailsResponse>> getOngoingQuests(@PathVariable String courierId) {
+        List<QuestDetailsResponse> ongoingQuests = courierService.getOngoingQuests(courierId);
+        return ResponseEntity.ok(ongoingQuests);
+    }
 }

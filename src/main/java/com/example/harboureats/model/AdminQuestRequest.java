@@ -1,8 +1,49 @@
+// AdminQuestRequest.java
 package com.example.harboureats.model;
 
-
 public class AdminQuestRequest {
-    // Add fields as per your quest creation requirements
+    private String questId;
+    private String questName;
+    private String questDescription;
+    private int progress;
+    private int tierOrderCount;
+    private double tierReward;
+
+    // Constructors, getters, and setters
+
+    // Other fields and methods ...
+
+    public String getQuestId() {
+        return questId;
+    }
+
+    public void setQuestId(String questId) {
+        this.questId = questId;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public int getTierOrderCount() {
+        return tierOrderCount;
+    }
+
+    public void setTierOrderCount(int tierOrderCount) {
+        this.tierOrderCount = tierOrderCount;
+    }
+
+    public double getTierReward() {
+        return tierReward;
+    }
+
+    public void setTierReward(double tierReward) {
+        this.tierReward = tierReward;
+    }
+
+    // Other getters and setters ...
 }
-
-

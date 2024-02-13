@@ -1,3 +1,4 @@
+// AdminQuestController.java
 package com.example.harboureats.controller;
 
 import com.example.harboureats.model.AdminQuestRequest;
@@ -20,8 +21,14 @@ public class AdminQuestController {
     }
 
     @PostMapping("/launch/{questId}")
-    public ResponseEntity<String> launchQuest(@PathVariable String questId) {
+    public ResponseEntity<String> launchQuest(@PathVariable(name = "questId") String questId) {
         adminQuestService.launchQuest(questId);
         return ResponseEntity.ok("Quest launched successfully");
+    }
+
+    @PostMapping("/deliverOrder/{questId}")
+    public ResponseEntity<String> deliverOrder(@PathVariable(name = "questId") String questId) {
+        adminQuestService.deliverOrder(questId);
+        return ResponseEntity.ok("Order delivered successfully");
     }
 }

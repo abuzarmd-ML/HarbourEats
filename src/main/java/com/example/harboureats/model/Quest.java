@@ -1,12 +1,20 @@
 
 package com.example.harboureats.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@DynamicUpdate
 public class Quest {
 
     @Id
@@ -41,4 +49,5 @@ public class Quest {
     public void setQuestDescription(String questDescription) {
         this.questDescription = questDescription;
     }
+
 }

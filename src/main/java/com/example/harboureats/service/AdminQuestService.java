@@ -5,7 +5,6 @@ import com.example.harboureats.model.AdminQuestRequest;
 import com.example.harboureats.model.Quest;
 import com.example.harboureats.repository.QuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

@@ -2,6 +2,10 @@
 package com.example.harboureats.service;
 
 import com.example.harboureats.model.AdminQuestRequest;
+import com.example.harboureats.model.Quest;
+import com.example.harboureats.repository.QuestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -11,12 +15,20 @@ import java.util.Map;
 public class AdminQuestService {
 
     private final Map<String, AdminQuestRequest> questMap = new HashMap<>();
+    private final QuestRepository questRepository;
+
+    @Autowired
+    public AdminQuestService(QuestRepository questRepository) {
+        this.questRepository = questRepository;
+    }
 
     public void createQuest(AdminQuestRequest questRequest) {
         String questId = generateQuestId();
         questRequest.setQuestId(questId);
         questRequest.setProgress(0); // Initial progress
         questMap.put(questId, questRequest);
+
+        questRepository.save(new Quest());
     }
 
     public void launchQuest(String questId) {

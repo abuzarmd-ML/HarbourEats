@@ -5,14 +5,20 @@ import com.example.harboureats.model.AdminQuestRequest;
 import com.example.harboureats.service.AdminQuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@Controller
 @RestController
 @RequestMapping("/api/quests")
 public class AdminQuestController {
 
+    private final AdminQuestService adminQuestService;
+
     @Autowired
-    private AdminQuestService adminQuestService;
+    public AdminQuestController(AdminQuestService adminQuestService) {
+        this.adminQuestService = adminQuestService;
+    }
 
     @PostMapping("/create")
     public ResponseEntity<String> createQuest(@RequestBody AdminQuestRequest questRequest) {

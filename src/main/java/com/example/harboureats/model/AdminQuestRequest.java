@@ -3,8 +3,8 @@ package com.example.harboureats.model;
 
 public class AdminQuestRequest {
     private String questId;
-    private String questName;
-    private String questDescription;
+    public String questName;
+    public String questDescription;
     private int progress;
     private int tierOrderCount;
     private double tierReward;

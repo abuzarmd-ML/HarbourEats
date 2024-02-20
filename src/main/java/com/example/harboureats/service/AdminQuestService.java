@@ -27,7 +27,10 @@ public class AdminQuestService {
         questRequest.setProgress(0); // Initial progress
         questMap.put(questId, questRequest);
 
-        questRepository.save(new Quest());
+        Quest entity = new Quest();
+        entity.setQuestName(questRequest.questName);
+        entity.setQuestDescription(questRequest.questDescription);
+        questRepository.save(entity);
     }
 
     public void launchQuest(String questId) {
